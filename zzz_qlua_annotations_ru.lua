@@ -1662,37 +1662,37 @@ function getCandlesByIndex(tag, line, first_candle, count) end
 --- Тиковые данные
 INTERVAL_TICK = 0
 --- 1 минута
-INTERVAL_M1 = 0
+INTERVAL_M1 = 1
 --- 2 минуты
-INTERVAL_M2 = 0
+INTERVAL_M2 = 2
 --- 3 минуты
-INTERVAL_M3 = 0
+INTERVAL_M3 = 3
 --- 4 минуты
-INTERVAL_M4 = 0
+INTERVAL_M4 = 4
 --- 5 минут
-INTERVAL_M5 = 0
+INTERVAL_M5 = 5
 --- 6 минут
-INTERVAL_M6 = 0
+INTERVAL_M6 = 6
 --- 10 минут
-INTERVAL_M10 = 0
+INTERVAL_M10 = 10
 --- 15 минут
-INTERVAL_M15 = 0
+INTERVAL_M15 = 15
 --- 20 минут
-INTERVAL_M20 = 0
+INTERVAL_M20 = 20
 --- 30 минут
-INTERVAL_M30 = 0
+INTERVAL_M30 = 30
 --- 1 час
-INTERVAL_H1 = 0
+INTERVAL_H1 = 60
 --- 2 часа
-INTERVAL_H2 = 0
+INTERVAL_H2 = 120
 --- 4 часа
-INTERVAL_H4 = 0
+INTERVAL_H4 = 240
 --- 1 день
-INTERVAL_D1 = 0
+INTERVAL_D1 = 1440
 --- 1 неделя
-INTERVAL_W1 = 0
+INTERVAL_W1 = 10080
 --- 1 месяц
-INTERVAL_MN1 = 0
+INTERVAL_MN1 = 23200
 
 ---@class fnCreateDataSourceReturn
 fnCreateDataSourceReturn = {}
@@ -1761,20 +1761,20 @@ function fnCreateDataSourceReturn:SetEmptyCallback() end
 
 --#region Функции для работы с таблицами Рабочего места QUIK
 
---- целое число,
-QTABLE_INT_TYPE = 0
---- число с плавающей точкой,
-QTABLE_DOUBLE_TYPE = 0
---- 64-битное целое число,
-QTABLE_INT64_TYPE = 0
---- кэшируемая строка,
-QTABLE_CACHED_STRING_TYPE = 0
---- время,
-QTABLE_TIME_TYPE = 0
---- дата,
-QTABLE_DATE_TYPE = 0
---- строка.
-QTABLE_STRING_TYPE = 0
+--- Целое число
+QTABLE_INT_TYPE = 1
+--- Число с плавающей точкой
+QTABLE_DOUBLE_TYPE = 2
+--- Строка
+QTABLE_STRING_TYPE = 3
+--- 64-битное целое число
+QTABLE_INT64_TYPE = 4
+--- Кэшируемая строка
+QTABLE_CACHED_STRING_TYPE = 6
+--- Время
+QTABLE_TIME_TYPE = 7
+--- Дата
+QTABLE_DATE_TYPE = 8
 
 ---Функция добавляет колонки в таблицу с идентификатором `t_id`.
 ---@param t_id number
@@ -1914,30 +1914,30 @@ QTABLE_NO_INDEX = -1
 ---@return boolean
 function SetColor(t_id, row, col, b_color, f_color, sel_b_color, sel_f_color) end
 
---- нажата левая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_LBUTTONDOWN = 0
---- нажата правая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_RBUTTONDOWN = 0
---- двойное нажатие левой кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_LBUTTONDBLCLK = 0
---- двойное нажатие правой кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_RBUTTONDBLCLK = 0
---- изменение текущей (выделенной) строки, при этом par1 равен номеру новой выделенной строки,
-QTABLE_SELCHANGED = 0
---- нажата символьная клавиша, при этом par2 содержит код клавиши, par1 - текущую выделенную строку,
-QTABLE_CHAR = 0
---- нажата клавиша, при этом par2 содержит код клавиши, par1 - текущую выделенную строку,
-QTABLE_VKEY = 0
---- нажата вниз средняя кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_MBUTTONDOWN = 0
---- двойное нажатие средней кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_MBUTTONDBLCLK = 0
---- отпущена левая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_LBUTTONUP = 0
---- отпущена правая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки,
-QTABLE_RBUTTONUP = 0
---- закрытие таблицы, при этом par1 и par2 равны нулю.
-QTABLE_CLOSE = 0
+--- Нажата левая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_LBUTTONDOWN = 1
+--- Нажата правая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_RBUTTONDOWN = 2
+--- Двойное нажатие левой кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_LBUTTONDBLCLK = 3
+--- Двойное нажатие правой кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_RBUTTONDBLCLK = 4
+--- Изменение текущей (выделенной) строки, при этом par1 равен номеру новой выделенной строки
+QTABLE_SELCHANGED = 5
+--- Нажата символьная клавиша, при этом par2 содержит код клавиши, par1 - текущую выделенную строку
+QTABLE_CHAR = 6
+--- Нажата клавиша, при этом par2 содержит код клавиши, par1 - текущую выделенную строку
+QTABLE_VKEY = 7
+--- Нажата вниз средняя кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_MBUTTONDOWN = 9
+--- Двойное нажатие средней кнопки мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_MBUTTONDBLCLK = 10
+--- Отпущена левая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_LBUTTONUP = 11
+--- Отпущена правая кнопка мыши, при этом par1 содержит номер строки, par2 - номер колонки
+QTABLE_RBUTTONUP = 12
+--- Закрытие таблицы, при этом par1 и par2 равны нулю
+QTABLE_CLOSE = 24
 
 ---Задание функции обратного вызова для обработки событий в таблице. \
 --- \
@@ -2186,20 +2186,20 @@ function GetValue(index, line_number) end
 ---@return boolean
 function SetRangeValue(line_number, start_index, end_index, value) end
 
----линии
-TYPE_LINE = 0
----гистограммы
-TYPE_HISTOGRAM = 0
----точки
-TYPE_POINT = 0
----точка-тире
-TYPE_DASHDOT = 0
----тире
-TYPE_DASH = 0
----треугольник вверх
-TYPE_TRIANGLE_UP = 0
----треугольник вниз
-TYPE_TRIANGLE_DOWN = 0
+--- Линии
+TYPE_LINE = 1
+--- Гистограммы
+TYPE_HISTOGRAM = 2
+--- Точки
+TYPE_POINT = 5
+--- Точка-тире
+TYPE_DASHDOT = 6
+--- Тире
+TYPE_DASH = 7
+--- Треугольник вверх
+TYPE_TRIANGLE_UP = 10
+--- Треугольник вниз
+TYPE_TRIANGLE_DOWN = 11
 
 --#endregion
 
